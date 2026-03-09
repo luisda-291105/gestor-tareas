@@ -1,0 +1,15 @@
+
+/* modo oscuro o claro */
+    /* esconde el boton por defecto */
+    .icono-dos {
+        display: none;
+    }
+
+    /* cuando el ancla tiene la clase" activa " invertimos */
+    .btn-icono.activo .icono-uno {
+        display: none ;
+    }
+
+    .btn-icono.activo .icono-dos {
+        display: inline;
+    }
