@@ -41,6 +41,38 @@ Referencias de diseño con múltiples vistas: lista de categorías, detalle de t
 
 ---
 
+## 🏗️ Arquitectura del Proyecto
+
+El siguiente diagrama muestra la arquitectura general de la aplicación, organizada en módulos separados por responsabilidad:
+
+![Arquitectura del proyecto](./assets/arquitectura_drawio.png)
+
+### Descripción de módulos
+
+**`root/`** — Punto de entrada de la app:
+- `index.html` — vista principal del gestor de tareas
+- `login.html` — vista de inicio de sesión
+- `register.html` — vista de registro de usuario
+- `script.js` — controlador principal / inicializador de la app
+
+**`js/auth/`** — Manejo de autenticación y acceso:
+- `authController.js` — orquesta el flujo de login y registro
+- `initLogin.js`, `initRegister.js`, `initAuth.js` — inicializadores de cada vista
+- `login.js` — lógica de login (`valideUsers`, `message`, `getUsers`)
+- `register.js` — lógica de registro (`saveUsers`, `valideExistenceDataUsers`)
+
+**`js/storage/`** — Capa de persistencia con `localStorage`:
+- `localStorage.js` — clase `LocalStorage` con interfaz CRUD genérica
+- Métodos: `saveLocalStorage`, `readLocalStorage`, `updateLocalStorage`, `deleteLocalStorage`, `crudInterface`
+
+**`js/task/`** — Lógica de tareas:
+- `tasksController.js` — orquesta las operaciones sobre tareas
+- `initCrudTask`, `initValideTask`, `initTask` — inicializadores
+- `crudTask` — operaciones: `seveTasks`, `searchTasks`, `updateTasks`, `deleteTasks`
+- `valideTask` / `valideDataTasks` — validaciones de datos
+
+---
+
 ## 🎨 Sistema de Diseño
 
 | Elemento | Valor |
@@ -84,16 +116,31 @@ Referencias de diseño con múltiples vistas: lista de categorías, detalle de t
 
 ```
 gestor-tareas/
-├── index.html          # Estructura principal de la app
+├── index.html                   # Vista principal — gestor de tareas
+├── login.html                   # Vista de inicio de sesión
+├── register.html                # Vista de registro
+├── script.js                    # Controlador principal / inicializador
 ├── css/
-│   └── styles.css      # Estilos y variables de diseño
+│   └── styles.css               # Estilos y variables de diseño
 ├── js/
-│   └── app.js          # Lógica de la aplicación y manejo de localStorage
-├── assets/
-│   ├── base-design.jpg
-│   ├── dase-design-mobile.webp
-│   └── more-design-option.webp
-└── README.md
+│   ├── auth/                    # Módulo de autenticación
+│   │   ├── authController.js
+│   │   ├── initLogin.js
+│   │   ├── initRegister.js
+│   │   ├── initAuth.js
+│   │   ├── login.js             # valideUsers, message, getUsers
+│   │   └── register.js          # saveUsers, valideExistenceDataUsers
+│   ├── storage/                 # Módulo de persistencia
+│   │   └── localStorage.js      # class LocalStorage (CRUD genérico)
+│   └── task/                    # Módulo de tareas
+│       ├── tasksController.js
+│       ├── crudTask.js          # seveTasks, searchTasks, updateTasks, deleteTasks
+│       └── valideTask.js        # valideTask, valideDataTasks
+└── assets/
+    ├── arquitectura_drawio.png
+    ├── base-design.jpg
+    ├── dase-design-mobile.webp
+    └── more-design-option.webp
 ```
 
 ---
@@ -125,8 +172,8 @@ gestor-tareas/
 
 ## 👤 Autor
 
-[**Estudiante:**](https://github.com/luisda-291105/gestor-tareas)
-**Materia:** Desarrollo Frontend II
+**Estudiante:** Luis Daniel Perez pinedo  
+**Materia:** Desarrollo Frontend  
 **Año:** 2026  
 
 ---
