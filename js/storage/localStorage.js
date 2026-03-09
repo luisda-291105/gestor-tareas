@@ -1,6 +1,6 @@
 // script para manejar el almacenamiento en localStorage
 
-class LocalStorage {
+export default class LocalStorage {
     constructor(localStorageKey) {
         this.localStorageKey = localStorageKey;
         this.datas = [];
@@ -22,6 +22,7 @@ class LocalStorage {
             
             // Guardar en localStorage
             localStorage.setItem(this.localStorageKey, JSON.stringify(this.datas));
+            console.log(`datos guardados exitosamente ${data}`);
             
             return data;
         } catch (error) {
