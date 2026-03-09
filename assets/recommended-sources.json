@@ -1,0 +1,45 @@
+{
+  "fuentes": {
+    "principal": {
+      "nombre": "Roboto",
+      "familia": "Roboto, sans-serif",
+      "pesos_usados": ["Regular 400", "Medium 500"],
+      "donde_usar": "títulos, texto de tareas, botones"
+    },
+    "secundaria": {
+      "nombre": "Roboto",
+      "familia": "Roboto, sans-serif",
+      "pesos_usados": ["Regular 400"],
+      "donde_usar": "fechas, subtítulos, texto gris"
+    },
+    "alternativa_opcional": {
+      "nombre": "Inter",
+      "familia": "Inter, sans-serif",
+      "pesos_usados": ["400", "500"],
+      "nota": "más moderna y legible en pantallas pequeñas"
+    }
+  },
+  "colores": {
+    "background": "#FFFFFF",
+    "surface": "#FAFAFA",
+    "text_primary": "#212121",
+    "text_secondary": "#757575",
+    "text_disabled": "#9E9E9E",
+    "accent": "#2196F3",
+    "success": "#4CAF50",
+    "border": "#E0E0E0",
+    "divider": "#EEEEEE"
+  },
+  "espaciado": {
+    "padding_screen": 16,
+    "gap_tareas": 8,
+    "checkbox_size": 24,
+    "fab_size": 56
+  },
+  "estilo_general": {
+    "border_radius": 8,
+    "elevation_tareas": 0,
+    "shadow": "ninguna o muy suave (opacity 0.05)",
+    "minimalismo_nivel": "alto - solo lo esencial"
+  }
+}
