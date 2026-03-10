@@ -1,0 +1,139 @@
+<!-- tasks.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Tareas - TaskMaster</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="tasks.html">
+                <i class="fas fa-check-circle me-2"></i>TaskMaster
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="nav-link text-white" id="usuarioNombre">
+                    <i class="fas fa-user me-2"></i><span id="nombreUsuario"></span>
+                </span>
+                <a class="nav-link" href="#" id="cerrarSesion">
+                    <i class="fas fa-sign-out-alt me-2"></i>Cerrar sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <div class="row">
+            <!-- Sidebar - Listas de categorías (diseño mobile/desktop) -->
+            <div class="col-md-3 col-lg-2 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0">Todas las listas</h6>
+                            <span class="badge bg-primary" id="totalCategorias">0 categorías</span>
+                        </div>
+                        
+                        <!-- Lista de categorías -->
+                        <div class="list-group list-group-flush" id="listaCategorias">
+                            <!-- Se llena dinámicamente con JS -->
+                        </div>
+
+                        <button class="btn btn-outline-primary btn-sm w-100 mt-3" onclick="mostrarModalNuevaCategoria()">
+                            <i class="fas fa-plus me-2"></i>Agregar nueva lista
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content - Tareas del día -->
+            <div class="col-md-9 col-lg-10">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">
+                                Hoy: <span id="fechaActual"></span>
+                                <small class="text-muted ms-2" id="contadorTareas">0 de 0 items</small>
+                            </h5>
+                            <button class="btn btn-primary btn-sm" onclick="mostrarModalNuevaTarea()">
+                                <i class="fas fa-plus me-2"></i>Agregar tarea
+                            </button>
+                        </div>
+
+                        <!-- Lista de tareas -->
+                        <div class="list-group" id="listaTareas">
+                            <!-- Se llena dinámicamente con JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para nueva tarea -->
+    <div class="modal fade" id="modalTarea" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nueva tarea</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formTarea">
+                        <div class="mb-3">
+                            <label class="form-label">Título</label>
+                            <input type="text" class="form-control" id="tituloTarea" placeholder="Agregar un título...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionTarea" rows="2" placeholder="Agregar una descripción..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoría</label>
+                            <select class="form-select" id="categoriaTarea">
+                                <option value="Trabajo">Trabajo</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Hogar">Hogar</option>
+                                <option value="Estudio">Estudio</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Fecha</label>
+                                <input type="date" class="form-control" id="fechaTarea">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Hora</label>
+                                <input type="time" class="form-control" id="horaTarea">
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="importanteTarea">
+                            <label class="form-check-label" for="importanteTarea">¿Importante?</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarTarea()">Guardar tarea</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/auth/login.js"></script>
+    <script src="js/validateDataTask.js"></script>
+    <script src="js/tasksController.js"></script>
+    <script src="js/userController.js"></script>
+</body>
+</html>
