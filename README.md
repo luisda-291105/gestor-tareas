@@ -24,28 +24,19 @@ Muchas personas tienen dificultades para organizar sus actividades diarias de fo
 
 El diseño de la aplicación se basó en los siguientes wireframes y referencias de UI:
 
-### Vista Desktop
-![Diseño base desktop](./assets/base-design.jpg)
+### Wireframe y Diseño Final
+![Wireframe del proyecto](./diseño/wireframe.jpeg)
 
-Interfaz con barra lateral de navegación, perfil de usuario, lista de tareas con checkboxes, edición y eliminación inline, y filtros (Todas / Activas / Completadas).
+Wireframe de la estructura general de la app: landing page con hero section, sección de características, vista del gestor de tareas con sidebar de listas y categorías, modal de nueva tarea, y footer. Incluye la versión final del diseño con colores, tipografía y componentes definitivos.
 
-### Vista Mobile
-![Diseño base mobile](./assets/dase-design-mobile.webp)
+### Diseño Final — Vistas Desktop y Mobile
+![Diseño final del proyecto](./diseño/diseño.png)
 
-Adaptación mobile con navegación superior, tarjetas de tarea con progreso visual y botón flotante de acción (FAB) para agregar nuevas tareas.
-
-### Opciones de diseño adicionales
-![Más opciones de diseño](./assets/more-design-option.webp)
-
-Referencias de diseño con múltiples vistas: lista de categorías, detalle de tareas del día y formulario de nueva tarea.
+Diseño completo de la aplicación: landing page responsive, vista del gestor de tareas con lista de tareas del día, etiquetas de categorías y prioridad, y vistas de registro de usuario — tanto en desktop como adaptadas para dispositivos móviles.
 
 ---
 
 ## 🏗️ Arquitectura del Proyecto
-
-El siguiente diagrama muestra la arquitectura general de la aplicación, organizada en módulos separados por responsabilidad:
-
-![Arquitectura del proyecto](./assets/arquitectura_drawio.png)
 
 ### Descripción de módulos
 
@@ -93,7 +84,7 @@ El siguiente diagrama muestra la arquitectura general de la aplicación, organiz
 
 ## ✅ Requerimientos de la Primera Entrega (10/03/2026)
 
-- [x] **1. Wireframes / imágenes del diseño** — incluidas en `/assets/`
+- [x] **1. Wireframes / imágenes del diseño** — incluidas en `/diseño/`
 - [x] **2. HTML, CSS y JS** — estructura, estilos y lógica concordantes con los diseños
 - [x] **3. Solución funcional con `localStorage`** — persistencia de datos sin backend
 
@@ -136,11 +127,9 @@ gestor-tareas/
 │       ├── tasksController.js
 │       ├── crudTask.js          # seveTasks, searchTasks, updateTasks, deleteTasks
 │       └── valideTask.js        # valideTask, valideDataTasks
-└── assets/
-    ├── arquitectura_drawio.png
-    ├── base-design.jpg
-    ├── dase-design-mobile.webp
-    └── more-design-option.webp
+└── diseño/
+    ├── wireframe.jpeg
+    └── diseño.png
 ```
 
 ---
