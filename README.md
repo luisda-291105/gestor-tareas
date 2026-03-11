@@ -6,6 +6,14 @@
 
 ---
 
+## 🌐 Demo en Vivo
+
+**🔗 [https://luisda-291105.github.io/gestor-tareas/](https://luisda-291105.github.io/gestor-tareas/)**
+
+> Desplegado con GitHub Pages — sin instalación, directo desde el navegador.
+
+---
+
 ## 📌 Descripción del Proyecto
 
 Aplicación web de gestión de tareas personales desarrollada como proyecto integrador de la materia de Frontend. Permite al usuario crear, editar, completar y eliminar tareas, con persistencia de datos mediante `localStorage`.
@@ -87,6 +95,7 @@ Diseño completo de la aplicación: landing page responsive, vista del gestor de
 - [x] **1. Wireframes / imágenes del diseño** — incluidas en `/diseño/`
 - [x] **2. HTML, CSS y JS** — estructura, estilos y lógica concordantes con los diseños
 - [x] **3. Solución funcional con `localStorage`** — persistencia de datos sin backend
+- [x] **4. Despliegue en GitHub Pages** — accesible en [https://luisda-291105.github.io/gestor-tareas/](https://luisda-291105.github.io/gestor-tareas/)
 
 ---
 
@@ -136,6 +145,11 @@ gestor-tareas/
 
 ## 🚀 Cómo Ejecutar
 
+### Opción 1 — Demo online (recomendado)
+Acceder directamente desde el navegador:  
+👉 **[https://luisda-291105.github.io/gestor-tareas/](https://luisda-291105.github.io/gestor-tareas/)**
+
+### Opción 2 — Ejecución local
 1. Clonar o descargar el repositorio
 2. Abrir `index.html` directamente en el navegador
 3. No requiere instalación ni servidor — funciona 100% en el cliente
@@ -156,6 +170,7 @@ gestor-tareas/
 | **JavaScript (ES6+)** | Lógica, DOM, eventos |
 | **localStorage** | Persistencia de datos en el navegador |
 | **Google Fonts — Roboto** | Tipografía principal |
+| **GitHub Pages** | Despliegue y hosting |
 
 ---
 
